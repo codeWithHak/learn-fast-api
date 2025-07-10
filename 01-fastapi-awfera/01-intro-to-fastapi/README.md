@@ -35,13 +35,13 @@ uv add uvicorn # installs uvicorn packag
 
 ```
 
-#### What is uvicorn:
+### What is uvicorn:
 We need a server to run our apis, because apis run on server.
 uvicorn executes apis on your local machine and considers it as a local server.
 
 In real world we execute apis on a remote server
 
-#### What is ASGI Server
+### What is ASGI Server
 
 ASGI stands for Asynchronous Server Gateway Interface
 
@@ -80,6 +80,18 @@ if __name__ == "__main__":
     # reload=True means we won't have to restart server on every change it will be automatically restarted. 
     uvicorn.run(app="main:app", reload=True) 
 ```
+
+### More routes:
+
+I've craeted one dynamic route here for demonstration.
+You should create more outes for practice.
+
+```python
+# Send a get request to a dynamic route, user input (name) will be put in URL.
+@app.get("/hello/{name}")
+def read_user(name:str) -> dict:
+    return {"message": f"Hello {name}"}
+
 
 ## 5 - Docs
 

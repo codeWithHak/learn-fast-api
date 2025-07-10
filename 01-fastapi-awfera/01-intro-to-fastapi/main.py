@@ -7,8 +7,13 @@ app = FastAPI(
 )
 
 @app.get("/")
-def home():
+def home() -> dict:
     return {"message":"Hello from fastapi"}
+
+@app.get("/hello/{name}")
+def read_user(name:str) -> dict:
+    return {"message": f"Hello {name}" }
+
 
 if __name__ == "__main__":
     uvicorn.run(app="main:app", reload=True)
