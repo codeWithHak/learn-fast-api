@@ -1,0 +1,4 @@
+Task:
+
+1- image size validation
+2- proper email validation
