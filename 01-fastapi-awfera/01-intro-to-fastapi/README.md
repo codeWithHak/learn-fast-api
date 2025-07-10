@@ -92,6 +92,7 @@ You should create more outes for practice.
 def read_user(name:str) -> dict:
     return {"message": f"Hello {name}"}
 
+```
 
 ## 5 - Docs
 
