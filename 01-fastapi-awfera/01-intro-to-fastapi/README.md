@@ -47,3 +47,40 @@ ASGI stands for Asynchronous Server Gateway Interface
 
 Thousands of users use same API at the same time, so our API should be able to handle multiple requests asynchronously and ASGI allows us to do that.
 
+## 4 - Basic FastAPI Setup
+
+```python
+from fastapi import FastAPI # import FastAPI class.
+import uvicorn # import uvicorn for cerver
+
+# I will show you two basic ways of creating an instance of FastAPI class.
+
+# 1 Very basic, no need of any parameters.
+app = FastAPI()
+
+# 2 A better way, this will help us in documentation.
+app = FastAPI(
+    title="My First API",
+    description="A simple API using FastAPI",
+    version="0.116.0"
+)
+
+
+# a basic route for root directory (home page)
+# we are sending a get request to / path (home page / root)
+@app.get("/")
+def read_root():
+    return {"message":"Hello from FatAPI "}
+
+
+# run uvicorn server
+if __name__ == "__main__":
+
+    # app will take the name of your file as value, like: "filename:app".
+    # reload=True means we won't have to restart server on every change it will be automatically restarted. 
+    uvicorn.run(app="main:app", reload=True) 
+```
+
+## 5 - Docs
+
+Go to /docs to view documentation that FastAPI created for you automatically.

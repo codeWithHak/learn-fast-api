@@ -1,6 +1,14 @@
-def main():
-    print("Hello from 01-intro-to-fastapi!")
+from fastapi import FastAPI
+import uvicorn
 
+app = FastAPI(
+    description="Basic FastAPI",
+    version="0.116.0"
+)
+
+@app.get("/")
+def home():
+    return {"message":"Hello from fastapi"}
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run(app="main:app", reload=True)
