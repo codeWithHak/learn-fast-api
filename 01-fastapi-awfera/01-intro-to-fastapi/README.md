@@ -14,6 +14,7 @@ We use APIs to create a connection between two softwares, e.g: Server and Client
 - **Easy to use**
 - **Provides automatic documentation**
 
+![alt text](image-1.png)
 
 
 # 3 - Installation
